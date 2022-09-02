@@ -1,5 +1,6 @@
 pages\BasePage.class
 pages\MyAccountMyStore.class
 pages\LoginMyStore.class
+utilities\DriverSetup.class
 pages\SignupMyStore.class
 pages\MyStoreMain.class

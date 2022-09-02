@@ -9,8 +9,8 @@ public class BaseTest
     @BeforeClass
     void InvokeBrowser()
     {
-        //this.driver = DriverSetup.chromeDriverInitiate();
-        this.driver = DriverSetup.DriverInitiate("edge");
+        this.driver = DriverSetup.chromeDriverInitiate();
+        //this.driver = DriverSetup.DriverInitiate("edge");
     }
     @AfterClass
     void teardown()
