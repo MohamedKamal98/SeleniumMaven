@@ -1,0 +1,5 @@
+pages\BasePage.class
+pages\MyAccountMyStore.class
+pages\LoginMyStore.class
+pages\SignupMyStore.class
+pages\MyStoreMain.class
