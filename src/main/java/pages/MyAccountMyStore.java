@@ -16,10 +16,10 @@ public class MyAccountMyStore extends BasePage
     {
         super(driver);
     }
-    public Boolean checkCstName(String firstName, String lastName)
+    public String  getCstName()
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(cstAccountBtn));
-         return driver.findElement(cstAccountBtn).getText().equals((firstName + " " + lastName));
+         return driver.findElement(cstAccountBtn).getText();
     }
     public void chooseWomenT_shirt()
     {

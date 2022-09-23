@@ -19,7 +19,7 @@ public class ValidSignIn extends BaseTest
     @DataProvider(name = "ValidUserLoginData")
     private Object[][] userLoginData() throws IOException
     {
-        return ReadDataFromExcel.getExcelData("","",2);
+        return ReadDataFromExcel.getExcelData("Login.xlsx","validLogin",2);
     }
 
     @BeforeClass
@@ -38,15 +38,20 @@ public class ValidSignIn extends BaseTest
         loginMyStore.writeSignInEmailTxt(email);
         loginMyStore.writeSignInPasswordTxt(password);
         loginMyStore.clickSignInBtn();
-        verifyCstName();
-        myAccountMyStore.chooseWomenT_shirt();
+        softAssert.assertEquals(myAccountMyStore.getCstName(),
+                ReadDataFromFile.getData().get("firstName") +
+                        " " +ReadDataFromFile.getData().get("lastName")
+        );
+        //verifyCstName();
+        //myAccountMyStore.chooseWomenT_shirt();
+        softAssert.assertAll();
     }
     private void  verifyCstName()
     {
-        Assert.assertTrue(myAccountMyStore.checkCstName(
-                ReadDataFromFile.getData().get("firstName"),
-                ReadDataFromFile.getData().get("lastName")
-        ));
+        Assert.assertEquals(myAccountMyStore.getCstName(),
+                ReadDataFromFile.getData().get("firstName") +
+                        " " +ReadDataFromFile.getData().get("lastName")
+        );
     }
 
 }

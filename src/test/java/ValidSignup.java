@@ -48,9 +48,9 @@ public class ValidSignup extends BaseTest
     }
     private void  verifyCstName()
     {
-        Assert.assertTrue(myAccountMyStore.checkCstName(
-                ReadDataFromFile.getData().get("firstName"),
-                ReadDataFromFile.getData().get("lastName")
-        ));
+        Assert.assertEquals(myAccountMyStore.getCstName(),
+                ReadDataFromFile.getData().get("firstName") +
+                        " " +ReadDataFromFile.getData().get("lastName")
+        );
     }
 }

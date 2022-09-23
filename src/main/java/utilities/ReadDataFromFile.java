@@ -57,7 +57,7 @@ public class ReadDataFromFile
                 else if (i==17)
                     dataMap.put("aliasAddress",line);
                 i++;
-                System.out.println(line);
+                //System.out.println(line);
             }
             reader.close();
 
