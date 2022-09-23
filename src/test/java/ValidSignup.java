@@ -9,6 +9,7 @@ import pages.LoginMyStore;
 import pages.MyAccountMyStore;
 import pages.MyStoreMain;
 import pages.SignupMyStore;
+import utilities.ReadDataFromFile;
 
 public class ValidSignup extends BaseTest
 {
@@ -34,7 +35,7 @@ public class ValidSignup extends BaseTest
     public void verifyCreatingAccount()
     {
         MyStore.clickSigningBtn();
-        loginMyStore.writeCreateAccountEmail();
+        loginMyStore.writeCreateAccountEmail(ReadDataFromFile.getData().get("email"));
         loginMyStore.clickCreateAccountEmailBtn();
         signupMyStore.fillCustomerData();
         verifyEmail();
@@ -43,10 +44,13 @@ public class ValidSignup extends BaseTest
     }
     private void verifyEmail()
     {
-        Assert.assertEquals(signupMyStore.checkEmail(),signupMyStore.getEmail());
+        Assert.assertEquals(signupMyStore.checkEmail(), ReadDataFromFile.getData().get("email"));
     }
     private void  verifyCstName()
     {
-        Assert.assertTrue(myAccountMyStore.checkCstName());
+        Assert.assertTrue(myAccountMyStore.checkCstName(
+                ReadDataFromFile.getData().get("firstName"),
+                ReadDataFromFile.getData().get("lastName")
+        ));
     }
 }

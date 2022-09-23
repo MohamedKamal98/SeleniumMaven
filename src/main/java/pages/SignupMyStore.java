@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.Select;
+import utilities.ReadDataFromFile;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -73,22 +74,26 @@ public class SignupMyStore extends BasePage
     public void fillCustomerData()
     {
         clickMaleRadioBtn();
-        writeFirstName();
-        writeLastName();
-        writePassword();
-        selectDateOfBirth();
+        writeFirstName(ReadDataFromFile.getData().get("firstName"));
+        writeLastName(ReadDataFromFile.getData().get("lastName"));
+        writePassword(ReadDataFromFile.getData().get("password"));
+        selectDateOfBirth(
+                ReadDataFromFile.getData().get("dayValue"),
+                ReadDataFromFile.getData().get("monthValue"),
+                ReadDataFromFile.getData().get("yearValue")
+        );
         clickCheckBoxReceiveOffers();
-        writeCompany();
-        writeAddress1();
-        writeAddress2();
-        writeCity();
-        selectState();
-        writePostcode();
-        selectCountry();
-        writeAdditionalInfo();
-        writeHomePhone();
-        writeMobilePhone();
-        writeAliasAddress();
+        writeCompany(ReadDataFromFile.getData().get("company"));
+        writeAddress1(ReadDataFromFile.getData().get("address1"));
+        writeAddress2(ReadDataFromFile.getData().get("address2"));
+        writeCity(ReadDataFromFile.getData().get("city"));
+        selectState(ReadDataFromFile.getData().get("stateValue"));
+        writePostcode(ReadDataFromFile.getData().get("postcode"));
+        selectCountry(ReadDataFromFile.getData().get("countryValue"));
+        writeAdditionalInfo(ReadDataFromFile.getData().get("additionalInfo"));
+        writeHomePhone(ReadDataFromFile.getData().get("homePhone"));
+        writeMobilePhone(ReadDataFromFile.getData().get("mobilePhone"));
+        writeAliasAddress(ReadDataFromFile.getData().get("aliasAddress"));
 
     }
     public void  clickRegisterBtn()
@@ -101,7 +106,7 @@ public class SignupMyStore extends BasePage
         wait.until(ExpectedConditions.visibilityOfElementLocated(mrRadioBtn));
         driver.findElement(mrRadioBtn).click();
     }
-    private void selectDateOfBirth()
+    private void selectDateOfBirth(String dayValue, String monthValue, String yearValue)
     {
         //wait.until(ExpectedConditions.visibilityOfElementLocated(dobDays));
         drpDays = new Select(driver.findElement(dobDays));
@@ -113,12 +118,12 @@ public class SignupMyStore extends BasePage
         drpYears = new Select(driver.findElement(dobYears));
         drpYears.selectByValue(yearValue);
     }
-    private void writeFirstName()
+    private void writeFirstName(String firstName)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameTxt));
         driver.findElement(firstNameTxt).sendKeys(firstName);
     }
-    private void writeLastName()
+    private void writeLastName(String lastName)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(lastNameTxt));
         driver.findElement(lastNameTxt).sendKeys(lastName);
@@ -129,11 +134,7 @@ public class SignupMyStore extends BasePage
         //return driver.findElement(emailTxt).getText();
         return driver.findElement(emailTxt).getAttribute("value");
     }
-    public String getEmail()
-    {
-        return email;
-    }
-    private void writePassword()
+    private void writePassword(String password)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(passwordTxt));
         driver.findElement(passwordTxt).sendKeys(password);
@@ -143,60 +144,60 @@ public class SignupMyStore extends BasePage
         wait.until(ExpectedConditions.visibilityOfElementLocated(checkBoxReceiveOffers));
         driver.findElement(checkBoxReceiveOffers).click();
     }
-    private void writeCompany()
+    private void writeCompany(String company)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(companyTxt));
         driver.findElement(companyTxt).sendKeys(company);
     }
-    private void writeAddress1()
+    private void writeAddress1(String address1)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(address1Txt));
         driver.findElement(address1Txt).sendKeys(address1);
     }
-    private void writeAddress2()
+    private void writeAddress2(String address2)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(address2Txt));
         driver.findElement(address2Txt).sendKeys(address2);
     }
-    private void writeCity()
+    private void writeCity(String city)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(cityTxt));
         driver.findElement(cityTxt).sendKeys(city);
     }
-    private void selectState()
+    private void selectState(String stateValue)
     {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("uniform-id_state")));
         drpState = new Select(driver.findElement(state));
         drpState.selectByValue(stateValue);
     }
-    private void  writePostcode()
+    private void  writePostcode(String postcode)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(postcodeTxt));
         driver.findElement(postcodeTxt).sendKeys(postcode);
     }
-    private void selectCountry()
+    private void selectCountry(String countryValue)
     {
         //wait.until(ExpectedConditions.visibilityOfElementLocated(country));
         drpCountry = new Select(driver.findElement(country));
         drpCountry.selectByValue(countryValue);
     }
-    private void writeAdditionalInfo()
+    private void writeAdditionalInfo(String additionalInfo)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(additionalInfoTxt));
         driver.findElement(additionalInfoTxt).sendKeys(additionalInfo);
     }
-    private void writeHomePhone()
+    private void writeHomePhone(String homePhone)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(homePhoneTxt));
         driver.findElement(homePhoneTxt).sendKeys(homePhone);
     }
-    private void writeMobilePhone()
+    private void writeMobilePhone(String mobilePhone)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(mobilePhoneTxt));
         driver.findElement(mobilePhoneTxt).sendKeys(mobilePhone);
     }
-    private void writeAliasAddress()
+    private void writeAliasAddress(String aliasAddress)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(aliasAddressTxt));
         driver.findElement(aliasAddressTxt).clear();

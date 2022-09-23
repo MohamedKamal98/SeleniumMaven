@@ -1,6 +1,8 @@
 pages\BasePage.class
-pages\MyAccountMyStore.class
+utilities\ReadDataFromExcel.class
 pages\LoginMyStore.class
+utilities\ReadDataFromFile.class
+pages\MyAccountMyStore.class
 utilities\DriverSetup.class
 pages\SignupMyStore.class
 pages\MyStoreMain.class

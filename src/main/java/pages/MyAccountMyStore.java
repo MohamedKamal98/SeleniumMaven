@@ -16,7 +16,7 @@ public class MyAccountMyStore extends BasePage
     {
         super(driver);
     }
-    public Boolean checkCstName()
+    public Boolean checkCstName(String firstName, String lastName)
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(cstAccountBtn));
          return driver.findElement(cstAccountBtn).getText().equals((firstName + " " + lastName));
