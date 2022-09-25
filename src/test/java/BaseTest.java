@@ -2,6 +2,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import utilities.DriverSetup;
+import utilities.PropertyFileSetup;
 
 public class BaseTest
 {
@@ -10,6 +11,7 @@ public class BaseTest
     @BeforeClass
     void InvokeBrowser()
     {
+        PropertyFileSetup.propertiesInitiate();
         softAssert = new SoftAssert();
         //this.driver = DriverSetup.chromeDriverInitiate();
         this.driver = DriverSetup.DriverInitiate("chrome");

@@ -12,14 +12,23 @@ public class MyAccountMyStore extends BasePage
     private By womenMenuBtn = By.xpath("//div[@id=\"block_top_menu\"]//a[@class=\"sf-with-ul\"and @title=\"Women\"]");
     private By womenT_shirtsbtn = By.xpath("//ul[@class=\"submenu-container clearfix first-in-line-xs\"]//a[@title=\"T-shirts\"]");
 
+    private By signOutBtn = By.xpath("//a[@class=\"logout\"]");
+
     public MyAccountMyStore(WebDriver driver)
     {
         super(driver);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(cstAccountBtn));
     }
     public String  getCstName()
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(cstAccountBtn));
          return driver.findElement(cstAccountBtn).getText();
+    }
+    public LoginMyStore clickSignOutBtn()
+    {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(signOutBtn));
+        driver.findElement(signOutBtn).click();
+        return new LoginMyStore(driver);
     }
     public void chooseWomenT_shirt()
     {

@@ -26,22 +26,23 @@ public class ValidSignIn extends BaseTest
     private void initializeObject()
     {
         myStoreMain = new MyStoreMain(this.driver);
-        loginMyStore = new LoginMyStore(this.driver);
-        myAccountMyStore = new MyAccountMyStore(this.driver);
+        //loginMyStore = new LoginMyStore(this.driver);
+        //myAccountMyStore = new MyAccountMyStore(this.driver);
     }
     @Test(dataProvider = "ValidUserLoginData")
     public void verifyLoginIn(String email,String password)
     {
-        myStoreMain.clickSigningBtn();
+        loginMyStore = myStoreMain.clickSigningBtn();
         //loginMyStore.writeSignInEmailTxt(ReadDataFromFile.getData().get("email"));
         //loginMyStore.writeSignInPasswordTxt(ReadDataFromFile.getData().get("password"));
         loginMyStore.writeSignInEmailTxt(email);
         loginMyStore.writeSignInPasswordTxt(password);
-        loginMyStore.clickSignInBtn();
+        myAccountMyStore = loginMyStore.clickSignInBtn();
         softAssert.assertEquals(myAccountMyStore.getCstName(),
                 ReadDataFromFile.getData().get("firstName") +
                         " " +ReadDataFromFile.getData().get("lastName")
         );
+        loginMyStore =  myAccountMyStore.clickSignOutBtn();
         //verifyCstName();
         //myAccountMyStore.chooseWomenT_shirt();
         softAssert.assertAll();

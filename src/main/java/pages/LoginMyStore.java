@@ -32,6 +32,7 @@ public class LoginMyStore extends BasePage
     public LoginMyStore(WebDriver driver)
     {
         super(driver);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(signInBtn));
     }
 
     public void writeCreateAccountEmail(String email)
@@ -39,10 +40,11 @@ public class LoginMyStore extends BasePage
         wait.until(ExpectedConditions.visibilityOfElementLocated(createAccountEmailTxt));
         driver.findElement(createAccountEmailTxt).sendKeys(email);
     }
-    public void clickCreateAccountEmailBtn()
+    public SignupMyStore clickCreateAccountEmailBtn()
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(createAccountEmailBtn));
         driver.findElement(createAccountEmailBtn).click();
+        return new SignupMyStore(driver);
     }
     public void writeSignInEmailTxt(String email)
     {
@@ -54,9 +56,10 @@ public class LoginMyStore extends BasePage
         wait.until(ExpectedConditions.visibilityOfElementLocated(signInPasswordTxt));
         driver.findElement(signInPasswordTxt).sendKeys(password);
     }
-    public void clickSignInBtn()
+    public MyAccountMyStore clickSignInBtn()
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(signInBtn));
         driver.findElement(signInBtn).click();
+        return new MyAccountMyStore(driver);
     }
 }

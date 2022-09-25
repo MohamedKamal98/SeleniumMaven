@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MyStoreMain extends BasePage
 {
@@ -9,11 +10,13 @@ public class MyStoreMain extends BasePage
     public MyStoreMain(WebDriver driver)
     {
         super(driver);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(signBtn));
     }
 
-    public void  clickSigningBtn()
+    public LoginMyStore  clickSigningBtn()
     {
         driver.findElement(signBtn).click();
+        return new LoginMyStore(driver);
     }
 
 

@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverSetup
 {
-    private static String url="http://automationpractice.com";
+    private static String url;
     public static WebDriver chromeDriverInitiate()
     {
         System.setProperty("webdriver.chrome.driver",
@@ -25,6 +25,7 @@ public class DriverSetup
     }
     public static WebDriver DriverInitiate(String browser)
     {
+        url = PropertyFileSetup.properties.getProperty("url");
         WebDriver driver = null;
         if (browser == "chrome")
         {

@@ -9,10 +9,35 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default Suite</th></tr>
-<tr><td><a href="#t0">MavenSelenium</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">42,669</td><td></td><td></td></tr>
+<tr><td><a href="#t0">MavenSelenium</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">208,287</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">MavenSelenium &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">ValidSignIn</td><td><a href="#m0">verifyLoginIn</a></td><td rowspan="1">1664019704071</td><td rowspan="1">23732</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">MavenSelenium &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">ValidSignIn</td><td><a href="#m0">verifyLoginIn</a></td><td rowspan="1">1664112278412</td><td rowspan="1">39754</td></tr><tr><th colspan="4">MavenSelenium &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">ValidSignIn</td><td><a href="#m1">verifyLoginIn</a></td><td rowspan="4">1664112318166</td><td rowspan="4">49683</td></tr><tr class="passedeven"><td><a href="#m2">verifyLoginIn</a></td></tr><tr class="passedeven"><td><a href="#m3">verifyLoginIn</a></td></tr><tr class="passedeven"><td><a href="#m4">verifyLoginIn</a></td></tr></tbody>
 </table>
-<h2>MavenSelenium</h2><h3 id="m0">ValidSignIn#verifyLoginIn</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>Mohamed-Kamal9839@gmail.com</td><td>mkamal9</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>MavenSelenium</h2><h3 id="m0">ValidSignIn#verifyLoginIn</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>Mohamed-Kamal9839@gmail.com</td><td>mkamal</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class=&quot;header_user_info&quot;]//a[@class=&quot;account&quot;] (tried for 20 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at pages.MyAccountMyStore.getCstName(MyAccountMyStore.java:23)
+	at ValidSignIn.verifyLoginIn(ValidSignIn.java:41)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@class=&quot;header_user_info&quot;]//a[@class=&quot;account&quot;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.8.1&apos;, revision: &apos;6e95a6684b&apos;, time: &apos;2017-12-01T18:33:54.468Z&apos;
+System info: host: &apos;ITSTPER&apos;, ip: &apos;172.18.176.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_161&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	... 29 more
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">ValidSignIn#verifyLoginIn</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>Mohamed-Kamal9839@gmail.com</td><td>mkamal9</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">ValidSignIn#verifyLoginIn</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>Mohamed-Kamal@gmail.com</td><td>mkamal9</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">ValidSignIn#verifyLoginIn</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>Mohamed-Kamal983@gmail.com</td><td>mkamal9</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">ValidSignIn#verifyLoginIn</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>Mohamed-Kamal9839@gmail.com</td><td>mkamal9</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

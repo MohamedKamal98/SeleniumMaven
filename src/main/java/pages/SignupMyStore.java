@@ -69,6 +69,7 @@ public class SignupMyStore extends BasePage
     public SignupMyStore(WebDriver driver)
     {
         super(driver);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameTxt));
     }
 
     public void fillCustomerData()
@@ -96,10 +97,11 @@ public class SignupMyStore extends BasePage
         writeAliasAddress(ReadDataFromFile.getData().get("aliasAddress"));
 
     }
-    public void  clickRegisterBtn()
+    public MyAccountMyStore clickRegisterBtn()
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(registerBtn));
         driver.findElement(registerBtn).click();
+        return new MyAccountMyStore(driver);
     }
     private void clickMaleRadioBtn()
     {
