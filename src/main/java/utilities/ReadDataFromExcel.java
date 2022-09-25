@@ -33,7 +33,6 @@ public class ReadDataFromExcel
         XSSFSheet sheet = workbook.getSheet(sheetName);
         //XSSFSheet sheet = workbook.getSheetAt(0);
         int numberOfRows = sheet.getLastRowNum()+1;
-        String s = sheet.getRow(0).getCell(0).toString();
         String [][] dataArray =  new String[numberOfRows][numberOfColumns];
         for(int i=0;i<numberOfRows;i++)
         {

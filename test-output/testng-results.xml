@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default Suite" duration-ms="42669" started-at="2022-09-24T13:41:25 EET" finished-at="2022-09-24T13:42:07 EET">
+    <groups>
+    </groups>
+    <test name="MavenSelenium" duration-ms="42669" started-at="2022-09-24T13:41:25 EET" finished-at="2022-09-24T13:42:07 EET">
+      <class name="ValidSignIn">
+        <test-method status="PASS" signature="InvokeBrowser()[pri:0, instance:ValidSignIn@4501b7af]" name="InvokeBrowser" is-config="true" duration-ms="17805" started-at="2022-09-24T13:41:25 EET" finished-at="2022-09-24T13:41:42 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InvokeBrowser -->
+        <test-method status="PASS" signature="initializeObject()[pri:0, instance:ValidSignIn@4501b7af]" name="initializeObject" is-config="true" duration-ms="20" started-at="2022-09-24T13:41:42 EET" finished-at="2022-09-24T13:41:43 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeObject -->
+        <test-method status="PASS" signature="verifyLoginIn(java.lang.String, java.lang.String)[pri:0, instance:ValidSignIn@4501b7af]" name="verifyLoginIn" duration-ms="23732" started-at="2022-09-24T13:41:44 EET" data-provider="ValidUserLoginData" finished-at="2022-09-24T13:42:07 EET">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Mohamed-Kamal9839@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mkamal9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginIn -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:ValidSignIn@4501b7af]" name="teardown" is-config="true" duration-ms="2" started-at="2022-09-24T13:42:07 EET" finished-at="2022-09-24T13:42:07 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- ValidSignIn -->
+    </test> <!-- MavenSelenium -->
+  </suite> <!-- Default Suite -->
+</testng-results>
