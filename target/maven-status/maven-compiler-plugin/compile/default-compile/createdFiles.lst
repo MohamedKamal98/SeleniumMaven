@@ -3,6 +3,7 @@ utilities\ReadDataFromExcel.class
 pages\LoginMyStore.class
 utilities\ReadDataFromFile.class
 pages\MyAccountMyStore.class
+utilities\PropertyFileSetup.class
 utilities\DriverSetup.class
 pages\SignupMyStore.class
 pages\MyStoreMain.class

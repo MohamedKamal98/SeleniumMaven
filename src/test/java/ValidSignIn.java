@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import pages.LoginMyStore;
 import pages.MyAccountMyStore;
 import pages.MyStoreMain;
+import utilities.ExtentReport;
 import utilities.ReadDataFromExcel;
 import utilities.ReadDataFromFile;
 
@@ -16,6 +17,7 @@ public class ValidSignIn extends BaseTest
     LoginMyStore loginMyStore;
     MyAccountMyStore  myAccountMyStore;
 
+
     @DataProvider(name = "ValidUserLoginData")
     private Object[][] userLoginData() throws IOException
     {
@@ -26,6 +28,7 @@ public class ValidSignIn extends BaseTest
     private void initializeObject()
     {
         myStoreMain = new MyStoreMain(this.driver);
+        ExtentReport.reportInitiate();
         //loginMyStore = new LoginMyStore(this.driver);
         //myAccountMyStore = new MyAccountMyStore(this.driver);
     }
@@ -46,6 +49,8 @@ public class ValidSignIn extends BaseTest
         //verifyCstName();
         //myAccountMyStore.chooseWomenT_shirt();
         softAssert.assertAll();
+        ExtentReport.logStep();
+        ExtentReport.reportFinalize();
     }
     private void  verifyCstName()
     {

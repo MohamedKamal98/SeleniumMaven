@@ -5,7 +5,7 @@
     <classes>
       <class name="ValidSignIn">
         <methods>
-          <include name="verifyLoginIn" invocation-numbers="3"/>
+          <include name="verifyLoginIn" invocation-numbers="1 2 3 4"/>
           <include name="InvokeBrowser"/>
           <include name="initializeObject"/>
           <include name="teardown"/>
